@@ -1,7 +1,11 @@
 # Image Preprocessing Pipeline
 
 이 프로젝트는 OpenCV를 활용하여 이미지 전처리 과정을 실습하는 코드입니다. 주요 목적은 GitHub를 통한 코드 관리와 픽셀 단위 이미지 처리에 대한 이해입니다.
-image_preprocessing.py에는 resized, grayscale, threshold, blurred, flip, rotate, color, red_detected가 있고 image_preprocessing2.py에는 dark_removed, small_removed가 추가되어있습니다.
+
+main 브랜치에는 image_preprocessing.py가 있고 image_preprocessing.py에는 resized, grayscale, threshold, blurred, flip, rotate, color, red_detected가 있습니다.
+
+feature/image-processing 브랜치에는 image_preprocessing2.py가 추가되어있습니다.
+image_preprocessing2.py에는 dark_removed, small_removed가 추가되어있습니다.
 
 ---
 
