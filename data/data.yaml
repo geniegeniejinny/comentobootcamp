@@ -1,0 +1,5 @@
+train: ./data/datasets/train/images
+val: ./data/datasets/valid/images
+
+nc: 3
+names: ["person", "car", "dog"]
