@@ -1,5 +1,6 @@
-train: ./data/datasets/train/images
-val: ./data/datasets/valid/images
+# data/data.yaml
+train: ./datasets/train/images
+val: ./datasets/valid/images
 
 nc: 3
 names: ["person", "car", "dog"]
