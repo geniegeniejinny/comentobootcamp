@@ -1,4 +1,3 @@
-````markdown
 # AI 기반 데이터 모델링 및 OpenCV 시각화
 
 AI 모델을 활용해 이미지 데이터를 분석하고, OpenCV로 객체 탐지 결과를 시각화한 프로젝트입니다.  
@@ -29,6 +28,7 @@ source .venv/bin/activate
 # 2. 필수 패키지 설치
 pip install torch torchvision ultralytics opencv-python matplotlib
 ```
+
 ````
 
 ```python
@@ -94,3 +94,4 @@ if __name__ == "__main__":
 ```
 
 ```
+````
