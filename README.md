@@ -79,8 +79,8 @@ if __name__ == "__main__":
 
 | 항목                             | 이미지                                                |
 | -------------------------------- | ----------------------------------------------------- |
-| **Precision & Recall per Epoch** | ![precision_recall](docs/images/precision_recall.jpg) |
-| **mAP@50 per Epoch**             | ![map50](docs/images/map50.jpg)                       |
+| **Precision & Recall per Epoch** | ![precision_recall](docs/images/precision_recall.png) |
+| **mAP@50 per Epoch**             | ![map50](docs/images/map50.png)                       |
 | **Test Detection Result**        | ![detect_result](docs/images/detect_result.jpg)       |
 
 ---
