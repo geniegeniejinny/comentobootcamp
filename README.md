@@ -1,62 +1,72 @@
-
-# AI 재활용품 분류기 (PyTorch + FastAPI)
+# AI 재활용품 분류기 (PyTorch)
 
 ## 목표
+
 이미지(쓰레기 사진)를 입력하면 **paper / plastic / metal / glass / other**로 분류합니다.
 
 ## 빠른 시작
+
 ```bash
 python -m venv .venv
 # macOS/Linux
 source .venv/bin/activate
-# Windows
-# .venv\Scripts\activate
 
 pip install -r requirements.txt
 ```
 
-### 1) 데이터 폴더 구성
-```
+## 데이터 구성
+
+```bash
+Kaggle Garbage Classification 데이터셋을 80:20으로 분할해 사용합니다.
+
 data/
   train/
-    paper/    ...이미지들
-    plastic/  ...이미지들
-    metal/
-    glass/
-    other/
+    cardboard/ glass/ metal/ paper/ plastic/ trash/
   val/
-    paper/ ...
-    plastic/ ...
-    metal/ ...
-    glass/ ...
-    other/ ...
-```
-자체 수집 또는 공개 데이터 일부만 사용해도 됩니다.
+    cardboard/ glass/ metal/ paper/ plastic/ trash/
 
-### 2) 학습
-```bash
-python src/train.py --data data --epochs 2 --model models/recycle_resnet18.pt
+
 ```
 
-### 3) 예측 (CLI)
+## 학습(Training)
+
 ```bash
-python src/infer.py --model models/recycle_resnet18.pt --image path/to/test.jpg
+# 기본
+python3 src/train.py --data data --epochs 5 --model models/recycle_resnet18.pt
+
+# 권장(성능 개선: 증강/가중치/LR 스케줄러 적용본)
+python3 src/train.py --data data --epochs 15 --batch 32 --lr 5e-4 --model models/recycle_resnet18.pt
+
 ```
 
-### 4) FastAPI 서버
+## 추론(Inference, CLI)
+
 ```bash
-uvicorn app.api:app --reload --port 8000
-# POST /predict  (multipart/form-data, field: file)
+python3 src/infer.py --model models/recycle_resnet18.pt --image data/val/plastic/예시파일.jpg
+# 출력: {"label": "...", "prob": 0.XXX}
+
 ```
 
-## 테스트
+## 평가 지표
+
 ```bash
-pytest -q
+- Validation Accuracy: ~0.93 (epoch≈15, ResNet18 전이학습)
+- 혼동행렬(Confusion Matrix) 및 오분류 분석 결과는 아래와 같습니다.
+
+<p align="center">
+  <img src="outputs/confusion_matrix.png" alt="Confusion Matrix" width="500">
+</p>
+
 ```
 
 ## 폴더 구조
-src/         # 학습/추론
-app/         # FastAPI 엔드포인트
-tests/       # pytest
-models/      # 저장된 가중치(.pt)
-.vscode/     # 런치/테스트 설정
+
+src/ # 학습/추론
+app/ # FastAPI 엔드포인트
+tests/ # pytest
+models/ # 저장된 가중치(.pt)
+.vscode/ # 런치/테스트 설정
+
+## 라이선스/출처
+
+- Dataset: Kaggle Garbage Classification (학습·교육 목적 사용)
