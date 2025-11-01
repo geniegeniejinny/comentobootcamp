@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train (ResNet18)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/train.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--data",
+        "data",
+        "--epochs",
+        "2",
+        "--model",
+        "models/recycle_resnet18.pt"
+      ]
+    },
+    {
+      "name": "Run API (uvicorn)",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.api:app",
+        "--reload",
+        "--port",
+        "8000"
+      ]
+    }
+  ]
+}
