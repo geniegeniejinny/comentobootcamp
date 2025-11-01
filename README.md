@@ -53,7 +53,7 @@ python3 src/infer.py --model models/recycle_resnet18.pt --image data/val/plastic
 - 혼동행렬(Confusion Matrix) 및 오분류 분석 결과는 아래와 같습니다.
 
 <p align="center">
-  <img src="outputs/confusion_matrix.png" alt="Confusion Matrix" width="500">
+  <img src="https://github.com/geniegeniejinny/comentobootcamp/blob/08b05eacdf4f4792ab8e15e9fad3b47bc789492c/outputs/confusion_matrix_20251101-195227.png" width="500" alt="Confusion Matrix">
 </p>
 
 ## 폴더 구조
