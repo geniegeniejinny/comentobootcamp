@@ -49,15 +49,12 @@ python3 src/infer.py --model models/recycle_resnet18.pt --image data/val/plastic
 
 ## 평가 지표
 
-```bash
-- Validation Accuracy: ~0.93 (epoch≈15, ResNet18 전이학습)
+- Validation Accuracy: **~0.93 (epoch≈15, ResNet18 전이학습)**
 - 혼동행렬(Confusion Matrix) 및 오분류 분석 결과는 아래와 같습니다.
 
 <p align="center">
   <img src="outputs/confusion_matrix.png" alt="Confusion Matrix" width="500">
 </p>
-
-```
 
 ## 폴더 구조
 
