@@ -1,0 +1,12 @@
+{
+  "accuracy": 0.9291338582677166,
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "timestamp": "20251101-195227"
+}
