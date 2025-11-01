@@ -4,7 +4,7 @@ __pycache__/
 *.pt
 *.pth
 .DS_Store
-outputs/
+# outputs/
 data/*/
 !data/train/
 !data/val/
